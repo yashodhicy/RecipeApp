@@ -14,7 +14,19 @@
     <header>
 
       <div class="container">
-        <div class="sign-in">
+      <% if user_signed_in? %>
+      <ul>
+        <li class="dropdown">
+          <a class="btn dropbtn">Menu </a>
+          <div class="dropdown-content">
+            <%= link_to 'foods', foods_path , class: " pages-links btn-foods" %>
+            <%= link_to 'your recipes', recipes_path, class: "pages-links btn-recipes"%>
+            <%= link_to 'public recipes', public_recipes_path, class: "pages-links btn-recipes"%>
+          </div>
+        </li>
+      </ul>
+      <% end %>  
+      <div class="sign-in">
           <% if user_signed_in? %>
             <div class="text-end">
               <%= link_to 'Logout', destroy_user_session_path, class: "btn btn-logout", data: { turbo_method: :delete } %>
