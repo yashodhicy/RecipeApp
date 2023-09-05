@@ -56,8 +56,8 @@ header {
 .btn-login:hover,
 .btn-logout:hover,
 .btn-sign-up:hover {
-    background-color: #59d7f7;
-    color: #000;
+  background-color: #59d7f7;
+  color: #000;
 }
 
 main {
