@@ -66,3 +66,5 @@ end
 
 # Rubocop gem
 gem 'rubocop', '>= 1.0', '< 2.0'
+# Devise gem
+gem 'devise'
