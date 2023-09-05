@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'recipe_food/index'
-  get 'recipe_food/show'
-  get 'recipe/index'
-  get 'recipe/show'
-  get 'foods/index'
-  get 'users/index'
+  root 'users#index'
+
+  resources :recipes, only: %i[index show]
+  resources :foods, only: %i[index show]
+  resources :recipe_foods, only: %i[index show]
+  resources :public_recipes, only: [:index]
+  resources :general_shopping_list, only: [:index]
 end
