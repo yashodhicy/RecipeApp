@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   root 'users#index'
 
   resources :recipes, only: %i[index show]
