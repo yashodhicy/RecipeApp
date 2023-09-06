@@ -1,6 +1,6 @@
 .food-table {
   margin-top: 1rem;
-  width:70%; 
+  width: 70%;
   border: 0.3rem solid #244d4d;
 }
 
@@ -16,7 +16,7 @@ table {
 
 tr:first-child {
   background-color: #1a788f;
-  color:  white;
+  color: white;
 }
 
 tr:nth-child(even) {
@@ -29,21 +29,22 @@ tr:nth-child(even) {
 }
 
 .table-data:last-child {
-    border-right: none;
+  border-right: none;
 }
-.notice{
+
+.notice {
   display: flex;
   align-self: flex-start;
-  color:#244d4d;
+  color: #244d4d;
 }
 
 .add-food {
-    display: flex;
-    width: 70%;
-    justify-content: flex-end;
+  display: flex;
+  width: 70%;
+  justify-content: flex-end;
 }
 
 .no-foods {
-    color: #1a788f;
-    font-weight: 700;
+  color: #1a788f;
+  font-weight: 700;
 }
