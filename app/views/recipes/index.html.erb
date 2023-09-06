@@ -15,5 +15,5 @@
     <% end %>
 </ul>
 <% else %>
-  <p>You don't have any recipes yet. <%= link_to "Create a new recipe", new_recipe_path %></p> 
+  <p class="new-recipe">You don't have any recipes yet. <%= link_to "Create a new recipe", new_recipe_path, class: "btn-create" %></p> 
 <% end %>
