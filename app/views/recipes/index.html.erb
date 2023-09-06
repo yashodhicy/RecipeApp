@@ -1,2 +1,19 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipe/index.html.erb</p>
+<h1>Your Recipes</h1>
+
+<% if @recipes.any? %>
+<ul class="recipe-list">
+    <% @recipes.each do |recipe| %>
+        <li>
+            <div class="left">
+                <%=recipe.name %>
+                <%= link_to "Remove", recipe_path(recipe), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this recipe?"} %>
+            </div>
+            <div class="right">
+              <%=recipe.description %>
+            </div>
+         </li>
+    <% end %>
+</ul>
+<% else %>
+  <p>You don't have any recipes yet. <%= link_to "Create a new recipe", new_recipe_path %></p> 
+<% end %>
