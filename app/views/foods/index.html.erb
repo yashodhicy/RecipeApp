@@ -1,2 +1,20 @@
-<h1>Foods#index</h1>
-<p>Find me in app/views/foods/index.html.erb</p>
+<%= stylesheet_link_tag 'foods', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class='no-foods'>
+<%= "there are No foods right now.you can add a food." if @foods.empty?%>
+</div>
+<div class='add-food'>
+<%= link_to "Add food", new_food_path, class: "btn btn-addfood" %>
+</div>
+<table class = 'food-table'>
+<tr class = 'table-raw'>
+<th class = 'table-data'>name</th>
+<th class = 'table-data'>measurement_unit</th>
+<th class = 'table-data'>Price</th>
+<th class = 'table-data'>quantity</th>
+<th></th>
+
+</tr>
+<% @foods.each do |food| %>
+<%= render food %>
+<%end%>
+</table>
