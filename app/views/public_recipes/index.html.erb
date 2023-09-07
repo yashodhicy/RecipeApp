@@ -9,7 +9,7 @@
             </div>
             <div class="right">
                <p>Total food items: <%= recipe.recipe_foods.count %></p>
-               <p>Total price: </p>
+               <p>Total price: <%= calculate_total_price(recipe) %></p>
             </div>
        </li>
     </ul>
