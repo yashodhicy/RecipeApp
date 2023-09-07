@@ -2,11 +2,12 @@
 
 <% if @recipes.any? %>
 <ul class="recipe-list">
+    <%= link_to "Create a new recipe", new_recipe_path, class: "btn-create btn-recipe" %>
     <% @recipes.each do |recipe| %>
         <li>
             <div class="left">
-                <%=recipe.name %>
-                <%= link_to "Remove", recipe_path(recipe), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this recipe?"} %>
+                <h2><%=recipe.name %></h2><br>
+                <%= link_to "Remove", recipe_path(recipe), class: "remove-btn", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this recipe?"} %>
             </div>
             <div class="right">
               <%=recipe.description %>
