@@ -1,1 +1,58 @@
+<%= stylesheet_link_tag 'recipe_details', media: 'all', 'data-turbolinks-track': 'reload' %>
 <h1><%= @recipe.name %></h1>
+<section class='recipe-details'>
+<div>
+<p>preparation time:<%=@recipe.preparation_time%></p>
+<p>cooking time:<%=@recipe.cooking_time%> </p>
+<p><%=@recipe.description%><p>
+</div>
+<div class='status'>
+<p>Status: <%= @recipe.public ? 'Public' : 'Private' %></p>
+
+<%= form_for @recipe, url: toggle_public_recipe_path(@recipe), method: :patch do |f| %>
+  <%= f.hidden_field :public, value: !@recipe.public %>
+  <button type="submit" class="toggle-status-button" style="background-image: url('<%= asset_path(@recipe.public ? 'on-button.png' : 'off-button.png') %>');"></button>
+<% end %>
+<div>
+
+</section>
+
+<section class= 'link-buttons'>
+<%=link_to 'Generate Shopping list', general_shopping_lists_path, class: 'btn'%>
+<%if @recipe.user == current_user%>
+<%=link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: 'btn'%>
+<%end%>
+</section>
+
+<section>
+<%if @recipe_foods.empty?%>
+        <div class='recipe-show-none'>
+            <h1>No Ingredient added. Please add an Ingredient</h1>
+        </div>
+    <%else%>
+      <div class='recipe-show-table'>
+        <table class='recipe-table'>
+          <tr>
+            <th> Food </th>
+            <th> Quantity </th>
+            <th> Value </th>
+            <% if @recipe.user == current_user%>
+               <th> Actions </th>
+            <%end%>
+            
+          </tr>
+          <% @recipe_foods.each do |recipe_food| %>
+            <tr class='tr'>
+                <td><%=recipe_food.food.name%></td>
+                <td><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}"%></td>
+                <td><%= "$#{recipe_food.food.price.to_i * recipe_food.quantity.to_i}"%></td>
+                <% if @recipe.user == current_user %>
+                    <td> 
+                      <%= button_to "Delete", recipe_recipe_food_path(recipe_food.id), :method => :delete  %>
+                    </td>
+                 <%end%>
+            </tr>
+          <%end%>
+        </table>
+    <%end%>
+</section>
