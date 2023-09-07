@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h1>Add a new food</h1>
+  <%= form_with model: @recipe_food, url: recipe_recipe_foods_path(@recipe), method: :post, local: true, scope: :recipe_food do |form| %>
+  
+    <div class="field">
+      <%= form.label :food_id %>
+      <%= form.collection_select(:food_id, @foods, :id, :name, prompt: "Select a food", required: true) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, required: true, min: 1 %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Create food" %>
+    </div>
+  <% end %>
+</div>
+
