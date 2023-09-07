@@ -68,7 +68,7 @@ main {
   display: block;
 }
 
-/* .dropdown-content a {
+.dropdown-content a {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -79,7 +79,7 @@ h1 {
   text-decoration: underline wavy #025064;
   font-size: 24px;
   margin-bottom: 40px;
-} */
+}
 
 .new-recipe {
   display: flex;
