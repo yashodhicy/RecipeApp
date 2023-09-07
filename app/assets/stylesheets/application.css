@@ -76,7 +76,6 @@ main {
 
 h1 {
   color: #025064;
-  text-decoration: underline wavy #025064;
   font-size: 24px;
   margin-bottom: 40px;
 }
@@ -163,12 +162,13 @@ p {
 }
 
 .field label {
-  display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 .field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
 .field input[type="number"],
 .field textarea {
   width: 100%;
@@ -193,10 +193,11 @@ p {
   border-radius: 5px;
   font-size: 18px;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .actions input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #066f8a;
 }
 
 .back-to-recipe {
