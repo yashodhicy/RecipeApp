@@ -48,7 +48,6 @@ class RecipesController < ApplicationController
     redirect_to @recipe, notice: 'Recipe status updated.'
   end
 
-
   private
 
   def recipe_params
