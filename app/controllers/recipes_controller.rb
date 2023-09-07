@@ -5,7 +5,9 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @recipe = Recipe.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods
   end
 
   def new
@@ -34,6 +36,14 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to recipes_path, notice: 'Recipe deleted successfully.'
+  end
+
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    return unless @recipe.user == current_user
+
+    @recipe.update_column(:public, !@recipe.public)
+    redirect_to @recipe, notice: 'Recipe status updated.'
   end
 
   private
