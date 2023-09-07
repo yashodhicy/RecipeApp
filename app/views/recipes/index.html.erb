@@ -6,11 +6,11 @@
     <% @recipes.each do |recipe| %>
         <li>
             <div class="left">
-                <h2><%=recipe.name %></h2><br>
-                <%= link_to "Remove", recipe_path(recipe), class: "remove-btn", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this recipe?"} %>
+                <p><%= link_to recipe.name, recipe, class: "recipe-link" %></p><br>
+                <%= link_to "Remove", recipe_path(recipe), class: "remove-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this recipe?" } %>
             </div>
             <div class="right">
-              <%=recipe.description %>
+              <p><%= recipe.description %></p>
             </div>
          </li>
     <% end %>

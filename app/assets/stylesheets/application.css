@@ -123,6 +123,17 @@ h1 {
   right: 19.5rem;
 }
 
+.recipe-link {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.recipe-link:hover {
+  color: #025064;
+}
+
 .recipe-list {
   margin-top: 30px;
   width: 50vw;
@@ -140,11 +151,6 @@ h1 {
 
 h2 {
   font-size: 20px;
-}
-
-p {
-  margin-top: 10px;
-  font-weight: bold;
 }
 
 .form-container {
@@ -204,4 +210,51 @@ p {
   display: flex;
   justify-content: flex-end;
   margin-top: 30px;
+}
+
+/* Style for the main container */
+.welcome-container {
+  text-align: center;
+  padding: 20px;
+  padding-top: 60px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+  height: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the welcome message */
+.welcome-container h1 {
+  font-size: 2em;
+  color: #025064;
+  margin-bottom: 10px;
+}
+
+/* Style for the introductory text */
+.welcome-container p {
+  font-size: 1.2em;
+  color: #025064;
+  padding: 5px 30px;
+}
+
+/* Style for the action buttons */
+.btn-explore {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #025064;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+  background-color: #066f8a;
 }
