@@ -1,4 +1,6 @@
+<%= stylesheet_link_tag 'foods', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'recipe_details', media: 'all', 'data-turbolinks-track': 'reload' %>
+
 <h1><%= @recipe.name %></h1>
 <section class='recipe-details'>
 <div>
@@ -24,32 +26,32 @@
 <%end%>
 </section>
 
-<section>
+<section class= 'recipe-table-section'>
 <%if @recipe_foods.empty?%>
         <div class='recipe-show-none'>
             <h1>No Ingredient added. Please add an Ingredient</h1>
         </div>
     <%else%>
       <div class='recipe-show-table'>
-        <table class='recipe-table'>
+        <table class='table recipe-table'>
           <tr>
-            <th> Food </th>
-            <th> Quantity </th>
-            <th> Value </th>
+            <th class='table-data'> Food </th>
+            <th class='table-data'> Quantity </th>
+            <th class='table-data'> Value </th>
             <% if @recipe.user == current_user%>
-               <th> Actions </th>
+               <th class='table-data'> Actions </th>
             <%end%>
             
           </tr>
           <% @recipe_foods.each do |recipe_food| %>
-            <tr class='tr'>
-                <td><%=recipe_food.food.name%></td>
-                <td><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}"%></td>
-                <td><%= "$#{recipe_food.food.price.to_i * recipe_food.quantity.to_i}"%></td>
+            <tr >
+                <td class='table-data'><%=recipe_food.food.name%></td>
+                <td class='table-data'><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}"%></td>
+                <td class='table-data'><%= "$#{recipe_food.food.price.to_i * recipe_food.quantity.to_i}"%></td>
                 <% if @recipe.user == current_user %>
-                    <td> 
+                    <td class='table-data'> 
                       <%= button_to "Delete", recipe_recipe_food_path(recipe_food.id), :method => :delete  %>
-                    </td>
+                    </td class='table-data'>
                  <%end%>
             </tr>
           <%end%>

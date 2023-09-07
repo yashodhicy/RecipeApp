@@ -29,3 +29,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.recipe-table-section {
+  width: 70%;
+  justify-content: center;
+}
+
+.table {
+  width: 100%;
+}

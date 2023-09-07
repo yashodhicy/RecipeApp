@@ -1,4 +1,5 @@
-.food-table {
+.food-table,
+.recipe-table {
   margin-top: 1rem;
   width: 70%;
   border: 0.3rem solid #244d4d;

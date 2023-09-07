@@ -42,12 +42,12 @@ class RecipesController < ApplicationController
 
   def toggle_public
     @recipe = Recipe.find(params[:id])
-    if @recipe.user == current_user
-        @recipe.update_column(:public, !@recipe.public)
-        redirect_to @recipe, notice: 'Recipe status updated.'
-    end
+    return unless @recipe.user == current_user
+
+    @recipe.update_column(:public, !@recipe.public)
+    redirect_to @recipe, notice: 'Recipe status updated.'
   end
-  
+
 
   private
 
