@@ -6,17 +6,17 @@ RSpec.describe 'Recipes', type: :system do
   before(:all) do
     RecipeFood.delete_all
     Recipe.delete_all
-    Food.delete_all  
+    Food.delete_all
     User.destroy_all
   end
 
   before(:each) do
     @user = User.create!(name: 'yashodhi',
-        email: 'yashodhi@mail.com',
-        password: '123456',
-        password_confirmation: '123456',
-        confirmed_at: Time.now)
-    
+                         email: 'yashodhi@mail.com',
+                         password: '123456',
+                         password_confirmation: '123456',
+                         confirmed_at: Time.now)
+
     @food1 = Food.create(
       user: @user,
       name: 'Test Food 1',
@@ -34,11 +34,10 @@ RSpec.describe 'Recipes', type: :system do
     )
 
     @recipe = Recipe.create(user: @user,
-      name: 'Chicken Biryani',
-      description: 'Delicious chicken biryani with salad and curd',
-      preparation_time: 30,
-      cooking_time: 60
-    )
+                            name: 'Chicken Biryani',
+                            description: 'Delicious chicken biryani with salad and curd',
+                            preparation_time: 30,
+                            cooking_time: 60)
 
     sign_in @user
   end

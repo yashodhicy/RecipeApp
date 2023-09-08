@@ -6,28 +6,28 @@ RSpec.describe 'Recipes', type: :system do
 
   before(:all) do
     Recipe.delete_all
-    Food.delete_all  
-    User.destroy_all  
-    
+    Food.delete_all
+    User.destroy_all
+
     @user = User.create!(name: 'yashodhi',
                          email: 'yashodhi@mail.com',
                          password: '123456',
                          password_confirmation: '123456',
                          confirmed_at: Time.now)
     @food1 = Food.create(
-        user:@user,
-        name: 'Test Food',
-        measurement_unit: 'Gram',
-        price: 9.99,
-        quantity: 10
-      )
+      user: @user,
+      name: 'Test Food',
+      measurement_unit: 'Gram',
+      price: 9.99,
+      quantity: 10
+    )
     @food2 = Food.create(
-        user: @user,
-        name: 'Test Food',
-        measurement_unit: 'Gram',
-        price: 9.99,
-        quantity: 10
-      )
+      user: @user,
+      name: 'Test Food',
+      measurement_unit: 'Gram',
+      price: 9.99,
+      quantity: 10
+    )
     @foods = Food.all
   end
 
@@ -52,7 +52,7 @@ RSpec.describe 'Recipes', type: :system do
   it 'I can see the food price' do
     visit foods_path
     @foods.each do |food|
-        expect(page).to have_content(food.quantity)
+      expect(page).to have_content(food.quantity)
     end
   end
 end
