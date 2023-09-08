@@ -26,7 +26,6 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.find(params[:recipe_id])
     @recipe = @recipe_food.recipe
 
-
     if @recipe_food.destroy
       redirect_to recipe_path(@recipe), notice: 'Food was successfully deleted from the recipe.'
     else
