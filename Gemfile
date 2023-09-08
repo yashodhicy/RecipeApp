@@ -64,6 +64,14 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  gem 'capybara'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+end
+
 # Rubocop gem
 gem 'rubocop', '>= 1.0', '< 2.0'
 # Devise gem
