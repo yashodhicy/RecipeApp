@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  @author = User.new(name: 'Nasir')
+  @user = User.new(name: 'Nasir')
 
   subject do
     Recipe.new(user: @user,
