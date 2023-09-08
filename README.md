@@ -98,6 +98,11 @@ bundle exec rspec spec
 - Twitter: [NasirMa35888225](https://twitter.com/NasirMa35888225)
 - LinkedIn: [nasirmahd](https://www.linkedin.com/in/nasirmahd/)
 
+👤 : **Yashodhi Chathurangi**
+
+- GitHub: [@githubhandle](https://github.com/yashodhicy)
+- Twitter: [@twitterhandle](https://twitter.com/Yashichathucy)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yashodhichathurangi/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

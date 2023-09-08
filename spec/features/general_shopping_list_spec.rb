@@ -9,10 +9,10 @@ RSpec.describe 'GeneralShoppingLists', type: :system do
 
     @nasir = User.first
     @nasir ||= User.create!(name: 'Nasir',
-                             email: 'nasir@gmail.com',
-                             password: '123456',
-                             password_confirmation: '123456',
-                             confirmed_at: Time.now)
+                            email: 'nasir@gmail.com',
+                            password: '123456',
+                            password_confirmation: '123456',
+                            confirmed_at: Time.now)
     @recipe1 = Recipe.create(user: @nasir,
                              name: 'Chicken biryani',
                              description: 'Delicious Chicken biryani',
@@ -35,13 +35,12 @@ RSpec.describe 'GeneralShoppingLists', type: :system do
   end
 
   it 'displays the total value of food needed' do
-    visit general_shopping_lists_path(recipe_id: @recipe1.id) 
+    visit general_shopping_lists_path(recipe_id: @recipe1.id)
     expect(page).to have_content('total value of food needed: 0')
   end
-  
+
   it 'displays the total number of food items to buy' do
     visit general_shopping_lists_path(recipe_id: @recipe1.id)
     expect(page).to have_content('Amount of food items to buy : 0')
   end
-  
 end

@@ -9,12 +9,12 @@
 
   <div class="field">
     <%= form.label :preparation_time %>
-    <%= form.number_field :preparation_time, step: 0.01 %>
+    <%= form.number_field :preparation_time, step: 1, min: 1 %>
   </div>
 
   <div class="field">
     <%= form.label :cooking_time %>
-    <%= form.number_field :cooking_time, step: 0.01 %>
+    <%= form.number_field :cooking_time, step: 1, min: 1 %>
   </div>
 
   <div class="field">
