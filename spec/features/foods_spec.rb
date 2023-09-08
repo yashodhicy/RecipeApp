@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe 'Recipes', type: :system do
   include Devise::Test::IntegrationHelpers
 
