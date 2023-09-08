@@ -4,7 +4,7 @@
     <ul class="recipe-list">
         <li>
             <div class="left">
-              <h2><%= recipe.name %></2>
+              <h2><p><%= link_to recipe.name, recipe, class: "recipe-link" %></p><br></2>
               <p>By: <%= recipe.user.name %></p>
             </div>
             <div class="right">
