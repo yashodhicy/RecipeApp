@@ -6,9 +6,9 @@ RSpec.describe 'Recipes', type: :system do
   include Devise::Test::IntegrationHelpers
 
   before(:all) do
-    Recipe.delete_all  
+    Recipe.delete_all
     User.destroy_all
-    
+
     @user = User.create!(name: 'Mahmood',
                          email: 'mahmood@mail.com',
                          password: '123456',
