@@ -19,6 +19,5 @@ class GeneralShoppingListsController < ApplicationController
         @food_prices[food.id] = 0
       end
     end
-
   end
 end
