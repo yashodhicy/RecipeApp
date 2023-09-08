@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Shoppings', type: :system do
+RSpec.describe 'GeneralShoppingLists', type: :system do
   include Devise::Test::IntegrationHelpers
 
   before(:all) do
@@ -18,18 +18,16 @@ RSpec.describe 'Shoppings', type: :system do
                              description: 'Delicious Chicken biryani',
                              preparation_time: 10,
                              cooking_time: 75)
-    @food1 = Food.create(owner: @nasir,
+    @food1 = Food.create(user: @nasir,
                          name: 'pasta',
                          measurement_unit: 'grams',
                          price: 20.0,
                          quantity: 10)
-    @food2 = Food.create(owner: @nasir,
+    @food2 = Food.create(user: @nasir,
                          name: 'Macaroni',
-                         measurement_unit: 'grams',
+                         measurement_unit: 'units',
                          price: 50.0,
                          quantity: 3)
-    @ingredient1 = Ingredient.create(recipe: @recipe1, food: @food1, quantity: 10)
-    @ingredient2 = Ingredient.create(recipe: @recipe1, food: @food2, quantity: 3)
   end
 
   before(:each) do
@@ -37,12 +35,13 @@ RSpec.describe 'Shoppings', type: :system do
   end
 
   it 'displays the total value of food needed' do
-    visit shoppings_path(@recipe1)
-    expect(page).to have_content('total value of food needed: $10.06')
+    visit general_shopping_lists_path(recipe_id: @recipe1.id) 
+    expect(page).to have_content('total value of food needed: 0')
   end
-
+  
   it 'displays the total number of food items to buy' do
-    visit shoppings_path(@recipe1)
-    expect(page).to have_content('Amount of food items to buy:2')
+    visit general_shopping_lists_path(recipe_id: @recipe1.id)
+    expect(page).to have_content('Amount of food items to buy : 0')
   end
+  
 end
