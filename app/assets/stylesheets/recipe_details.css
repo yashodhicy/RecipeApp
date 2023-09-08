@@ -6,7 +6,8 @@
   background-color: transparent;
 }
 
-.recipe-details {
+.recipe-details,
+.amount-price {
   display: flex;
   align-items: first baseline;
   justify-content: space-between;
@@ -37,4 +38,9 @@
 
 .table {
   width: 100%;
+}
+
+.shopping-table {
+  width: 50%;
+  justify-content: center;
 }

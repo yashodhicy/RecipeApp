@@ -23,8 +23,8 @@ class RecipeFoodsController < ApplicationController
 
   def destroy
     @user = current_user
-    @recipe_food = RecipeFood.find(params[:id]) # Find the Recipe_food item by its own ID
-    @recipe = @recipe_food.recipe # Get the associated Recipe
+    @recipe_food = RecipeFood.find(params[:recipe_id])
+    @recipe = @recipe_food.recipe
 
     if @recipe_food.destroy
       redirect_to recipe_path(@recipe), notice: 'Food was successfully deleted from the recipe.'

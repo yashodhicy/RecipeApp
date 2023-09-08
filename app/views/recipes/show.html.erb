@@ -20,7 +20,7 @@
 </section>
 
 <section class= 'link-buttons'>
-<%=link_to 'Generate Shopping list', general_shopping_lists_path, class: 'btn'%>
+<%=link_to 'Generate Shopping list', general_shopping_lists_path(recipe_id: @recipe.id) , class: 'btn'%>
 <%if @recipe.user == current_user%>
 <%=link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: 'btn'%>
 <%end%>
