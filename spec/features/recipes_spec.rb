@@ -1,12 +1,14 @@
+# spec/features/recipes_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe 'Recipes', type: :system do
   include Devise::Test::IntegrationHelpers
 
   before(:all) do
-    User.delete_all
-    Recipe.delete_all
-
+    Recipe.delete_all  
+    User.destroy_all  
+    
     @user = User.create!(name: 'Mahmood',
                          email: 'mahmood@mail.com',
                          password: '123456',
