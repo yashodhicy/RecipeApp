@@ -7,7 +7,7 @@ RSpec.describe 'Recipes', type: :system do
 
   before(:all) do
     Recipe.delete_all  
-    User.destroy_all  
+    User.destroy_all
     
     @user = User.create!(name: 'Mahmood',
                          email: 'mahmood@mail.com',

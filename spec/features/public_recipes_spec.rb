@@ -46,8 +46,8 @@ RSpec.describe 'Public Recipes List', type: :system do
     visit public_recipes_path
 
     @public_recipes.each do |recipe|
-        expect(page).to have_content(recipe.name)
-        expect(page).to have_content("By: #{recipe.user.name}")
+      expect(page).to have_content(recipe.name)
+      expect(page).to have_content("By: #{recipe.user.name}")
     end
   end
 
@@ -56,6 +56,5 @@ RSpec.describe 'Public Recipes List', type: :system do
     Recipe.delete_all
   end
 
-  def set_users
-  end
+  def set_users; end
 end
