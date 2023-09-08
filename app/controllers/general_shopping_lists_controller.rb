@@ -1,7 +1,7 @@
 class GeneralShoppingListsController < ApplicationController
   def index
     @user = current_user
-    @recipe = Recipe.find(params[:recipe_id]).includes(recipe_food:  :user)
+    @recipe = Recipe.includes(:recipe_foods).find(params[:recipe_id])
     @user_foods_ids = @user.foods.pluck(:id)
     @recipe_foods_ids = @recipe.recipe_foods.pluck(:food_id)
     @missing_foods = @recipe_foods_ids - @user_foods_ids
