@@ -1,0 +1,46 @@
+.toggle-status-button {
+  height: 3rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+  background-color: transparent;
+}
+
+.recipe-details,
+.amount-price {
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+.recipe-details div {
+  line-height: 2rem;
+}
+
+.status {
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+.link-buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-table-section {
+  width: 70%;
+  justify-content: center;
+}
+
+.table {
+  width: 100%;
+}
+
+.shopping-table {
+  width: 50%;
+  justify-content: center;
+}

@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'foods', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'recipe_details', media: 'all', 'data-turbolinks-track': 'reload' %>
+<h1>Shopping List</h1>
+
+<div class= 'amount-price'>
+  <p>Amount of food items to buy : <%= @missing_foods.count %> <p>
+  <p>total value of food needed: <%= @sum %></p>
+</div>
+
+<section class='shopping-table'>
+<table class='table food-table shopping-t'>
+    <tr>
+      <th class='table-data'>Food</th>
+      <th class='table-data'>Quantity</th>
+      <th class='table-data'>Price</th>
+    </tr>
+    <% @missing_food_records.each do |food| %>
+      <tr>
+        <td class='table-data'><%= food.name %></td>
+        <td class='table-data'><%= "#{food.quantity} #{food.measurement_unit}" %></td>
+        <td class='table-data'><%= "$#{@food_prices[food.id]}" %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>
+
