@@ -71,7 +71,7 @@ In order to run this project you need:
 1. Install Rails
 2. Clone this repo 
 ```
-git clone git@github.com:Nasirkhan294/blog_app.git
+git clone git@github.com:yashodhicy/RecipeApp.git
 ```
 
 To run the project, execute the following command:
